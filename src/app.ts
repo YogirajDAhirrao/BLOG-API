@@ -8,6 +8,7 @@ import { authenticate } from "./middlewares/authMiddleware.js";
 import postRouter from "./routes/post.routes.js";
 import profileRouter from "./routes/profile.routes.js";
 import { swaggerUi, swaggerSpec } from "./utils/swagger.js";
+import { apiRateLimiter } from "./middlewares/rateLimiter.js";
 
 dotenv.config();
 const app = express();
@@ -26,7 +27,7 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
   res.send("Blog API is running 🚀");
 });
-
+app.use(apiRateLimiter);
 app.use("/auth", authRouter);
 app.use(authenticate);
 app.use("/posts", postRouter);
