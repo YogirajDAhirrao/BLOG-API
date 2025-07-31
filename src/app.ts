@@ -9,6 +9,7 @@ import postRouter from "./routes/post.routes.js";
 import profileRouter from "./routes/profile.routes.js";
 import { swaggerUi, swaggerSpec } from "./utils/swagger.js";
 import { apiRateLimiter } from "./middlewares/rateLimiter.js";
+import commentRouter from "./routes/comments.routes.js";
 
 dotenv.config();
 const app = express();
@@ -31,6 +32,7 @@ app.use(apiRateLimiter);
 app.use("/auth", authRouter);
 app.use(authenticate);
 app.use("/posts", postRouter);
+app.use("/comment",commentRouter)
 app.use("/profile", profileRouter);
 
 // const PORT = process.env.PORT || 5000;
