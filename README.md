@@ -33,9 +33,7 @@ A secure, scalable, and documented **Blog API** built with **Express**, **TypeSc
 * Available at: `GET /api-docs`
 * Auto-generated using `swagger-jsdoc` and `swagger-ui-express`.
 
----
 
-## 🚧 Planned Features (Next Steps)
 
 ### ✏️ Blog Post & Comment System
 
